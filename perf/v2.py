@@ -42,7 +42,7 @@ num_iterations = 4 # GRPO inner loop iterations
 
 from huggingface_hub import login
 try:
-    hf_token = "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"
+    hf_token = os.getenv("HF_TOKEN")
     login(token=hf_token)
 except:
     print("token not found")
