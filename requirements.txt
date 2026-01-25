@@ -1,0 +1,14 @@
+--extra-index-url https://download.pytorch.org/whl/cu124
+torch
+torchvision
+torchaudio
+transformers
+datasets
+trl
+accelerate
+peft
+bitsandbytes
+wandb
+tqdm
+huggingface_hub
+hf_transfer

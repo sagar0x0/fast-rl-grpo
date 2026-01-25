@@ -98,7 +98,6 @@ print(f"loaded dataset of: {len(QAs)} example")
 
 # Optimized Log Prob Calculation (Speeds up forward/backward logic)
 def get_per_token_logps(logits, input_ids):
-    # Use CrossEntropyLoss (fused C++ kernel) instead of log_softmax + gather (Python loop)
     # logits: [B, L, V] -> [B, V, L] for CrossEntropy
     return -nn.CrossEntropyLoss(reduction='none')(logits.transpose(1, 2), input_ids)
 

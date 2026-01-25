@@ -1,0 +1,32 @@
+# nsys install
+$ sudo apt install nsight-systems-2025.5.2
+$ export PATH=/opt/nvidia/nsight-systems/2025.5.2/bin:$PATH
+$ nsys --version
+
+# nsys profiling 
+# add this line to get cpu access
+$ sudo sh -c 'echo 1 > /proc/sys/kernel/perf_event_paranoid'
+
+$ nsys profile \
+  --trace=cuda,nvtx,osrt \
+  --cuda-memory-usage=true \
+  --sample=cpu \
+  --output=rl_profile \
+  --force-overwrite=true \
+  --stats=true \
+  python rl_pfl.py
+
+// stable benchmarking (GPU config)
+$ nvidia-smi --query-gpu=clocks.max.graphics --format=csv
+
+// clocks.max.graphics [MHz]
+// 2040 MHz
+
+// keep driver steady
+$ sudo nvidia-smi -pm 1
+
+// lock clock speed
+$ sudo nvidia-smi -lgc 1800,1800
+
+// reset
+$ sudo nvidia-smi -rgc
