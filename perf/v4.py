@@ -106,7 +106,6 @@ print(f"loaded dataset of: {len(QAs)} example")
 
 # Optimized Log Prob Calculation (Speeds up forward/backward logic)
 def get_per_token_logps(logits, input_ids):
-    # Use CrossEntropyLoss (fused C++ kernel) instead of log_softmax + gather (Python loop)
     # logits: [B, L, V] -> [B*L, V] for CrossEntropy
     logits_flat = logits.reshape(-1, logits.size(-1))    # .reshape() : first check contigous then .view() on contiguous tensor
     input_ids_flat = input_ids.reshape(-1)         
