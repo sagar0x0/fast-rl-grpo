@@ -1,5 +1,6 @@
 # fast-rl-grpo
 
+**[Technical Blog: RL Training with GRPO: Kernels & Performance](https://sagar0x0.substack.com/p/rl-training-with-grpo-kernels-and)**
 
 **A performance-obsessed GRPO training pipeline from algorithm to bare-metal CUDA kernels.**
 
