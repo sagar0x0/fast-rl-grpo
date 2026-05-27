@@ -1,5 +1,6 @@
 # fast-rl-grpo
 
+
 **A performance-obsessed GRPO training pipeline from algorithm to bare-metal CUDA kernels.**
 
 > Optimizing an RL post-training pipeline for LLMs using Group Relative Policy Optimization (GRPO), custom fused cross-entropy CUDA kernels, and systematic Nsight Systems profiling. Built on Llama 3.2-1B, trained on GSM8K, and benchmarked on an L4 GPU.
@@ -394,7 +395,7 @@ Pipeline Optimization                     Kernel Benchmarks (forward, V=156K)
 - **GRPO**: [DeepSeek-Math: Integrating Mathematical Reasoning in LLMs](https://arxiv.org/pdf/2402.03300)
 - **PPO**: [Proximal Policy Optimization Algorithms](https://arxiv.org/abs/1707.06347)
 - **Online Softmax**: [Online normalizer calculation for softmax](https://arxiv.org/abs/1805.02867)
-- **Blog Post**: [RL Training with GRPO: Kernels & Performance](https://sagarsj42.substack.com/)
+- **Blog Post**: [RL Training with GRPO: Kernels & Performance](https://sagar0x0.substack.com/p/rl-training-with-grpo-kernels-and)
 
 ---
 
